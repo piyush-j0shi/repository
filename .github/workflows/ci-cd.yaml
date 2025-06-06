@@ -76,6 +76,10 @@ jobs:
 
       - run: cargo doc --no-deps --all-features
 
+      - run: |
+          rm -rf ./docs
+          cp -r ./target/doc/<crate-name> ./docs
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
