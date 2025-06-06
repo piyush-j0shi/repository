@@ -1,96 +1,94 @@
 use std::io;
 
-fn main(){
-	println!("enter a number");
-	let mut number = String::new();
-	io::stdin().read_line(&mut number).expect("failed to read the value");
-	let number : i32 = number.trim().parse().expect("not a number");
+fn main() {
+    println!("enter a number");
+    let mut number = String::new();
+    io::stdin()
+        .read_line(&mut number)
+        .expect("failed to read the value");
+    let number: i32 = number.trim().parse().expect("not a number");
 
-	if number == 0{
-		println!("number should be greater than zero");
-		return;
-	} 
+    if number == 0 {
+        println!("number should be greater than zero");
+        return;
+    } else if number % 2 == 0 {
+        println!("{number} is even");
+    } else {
+        println!("{number} is odd");
+    }
 
-	else if number % 2 == 0 {
-		println!("{number} is even");
-	}
+    // using if in a let statement
 
-	else {
-		println!("{number} is odd");
-	}
+    let condition = false;
+    let numb = if condition { 5 } else { 6 };
+    println!("the value of number is : {numb}",);
 
-	// using if in a let statement
+    // loop in rust
 
-	let condition = false;
-	let numb = if condition {5} else {6};
-	println!("the value of number is : {numb}", );
+    // loop{
+    // 	println!("again");
+    // }
 
-	// loop in rust
+    // returning values from loop
 
-	// loop{
-	// 	println!("again");
-	// }
+    let mut counter = 0;
 
-	// returning values from loop
+    let result = loop {
+        counter += 1;
 
-	let mut counter = 0;
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
 
-	let result = loop {
-		counter += 1;
+    println!("the result is : {result}");
 
-		if counter == 10 {
-			break counter * 2;
-		}
-	};
+    // Multiple loops
 
-	println!("the result is : {result}");
+    let mut count = 0;
+    'counting_up: loop {
+        println!("count = {count}");
+        let mut remaining = 10;
 
-	// Multiple loops 
+        loop {
+            println!("remaining = {remaining}");
 
-	let mut count = 0;
-	'counting_up : loop{
-		println!("count = {count}");
-		let mut remaining = 10;
+            if remaining == 9 {
+                break;
+            }
 
-		loop {
-			println!("remaining = {remaining}");
+            if count == 2 {
+                break 'counting_up;
+            }
 
-			if remaining == 9{
-				break;
-			}
+            remaining -= 1;
+        }
 
-			if count == 2{
-				break 'counting_up;
-			}
+        count += 1;
+    }
 
-			remaining -= 1;
-		}
+    println!("end count = {count}");
 
-		count += 1;
-	}
+    // While loop
 
-	println!("end count = {count}");
+    let mut num = 3;
+    while num != 0 {
+        println!("{num}");
+        num -= 1;
+    }
 
-	// While loop
+    println!("LIFTOFF!!!");
 
-	let mut num = 3;
-	while num != 0{
-		println!("{num}");
-		num -= 1;
-	}
+    // for loop
+    let collection = [10, 20, 30, 40, 50];
 
-	println!("LIFTOFF!!!");
+    for elements in collection {
+        println!("the value is : {elements}",);
+    }
 
-	// for loop
-	let collection = [10, 20, 30, 40, 50];
-
-	for elements in collection{
-		println!("the value is : {elements}", );
-	}
-
-	// range in for loop
-	for number in (1..4).rev(){
-		println!("{number}", );
-	}
-	println!("LIFTOFF!!!");
+    // range in for loop
+    for number in (1..4).rev() {
+        println!("{number}",);
+    }
+    println!("LIFTOFF!!!");
 }

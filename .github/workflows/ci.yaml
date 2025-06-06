@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt, clippy
-      
+
       - uses: actions/cache@v4
         with:
           path: |
@@ -27,11 +27,11 @@ jobs:
             ~/.cargo/git
             target
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-      
+
       - run: cargo fmt --all -- --check
-      
+
       - run: cargo clippy --all-targets --all-features -- -D warnings
-      
+
       - run: cargo check --all-features
 
   test:
@@ -39,9 +39,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - uses: dtolnay/rust-toolchain@stable
-      
+
       - uses: actions/cache@v4
         with:
           path: |
@@ -49,9 +49,9 @@ jobs:
             ~/.cargo/git
             target
           key: ${{ runner.os }}-test-${{ hashFiles('**/Cargo.lock') }}
-      
+
       - run: cargo build --all-features
-      
+
       - run: cargo test --all-features
 
   docs:
@@ -59,9 +59,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - uses: dtolnay/rust-toolchain@stable
-      
+
       - uses: actions/cache@v4
         with:
           path: |
@@ -69,6 +69,5 @@ jobs:
             ~/.cargo/git
             target
           key: ${{ runner.os }}-docs-${{ hashFiles('**/Cargo.lock') }}
-      
-      - run: cargo doc --no-deps --all-features
 
+      - run: cargo doc --no-deps --all-features

@@ -1,17 +1,17 @@
 #[derive(Debug)]
 
 struct Rectangle {
-	width : u32,
-	height : u32
+    width: u32,
+    height: u32,
 }
 
 fn main() {
-	// let width = 30;
-	// let height = 50;
+    // let width = 30;
+    // let height = 50;
 
-	// let rect1 = (30, 50);
+    // let rect1 = (30, 50);
 
-	let rect1 = Rectangle {
+    let rect1 = Rectangle {
         width: 30,
         height: 50,
     };
@@ -19,13 +19,10 @@ fn main() {
     println!("rect1 is {:?}", rect1);
     // println!("rect1 is {:#?}", rect1); //pretty-print {:#?}
 
-	println!(
-		"area of rectange is {} square pixels",
-		area(&rect1)
-	);
+    println!("area of rectangle is {} square pixels", area(&rect1));
 }
 
-// Common way 
+// Common way
 
 // fn area(width : u32, height : u32) -> u32{
 // 	width * height
@@ -37,6 +34,6 @@ fn main() {
 // 	dimension.0 * dimension.1
 // }
 
-fn area(rectangle : &Rectangle) -> u32{
-	rectangle.width * rectangle.height
+fn area(rectangle: &Rectangle) -> u32 {
+    rectangle.width * rectangle.height
 }

@@ -19,11 +19,11 @@ struct Account {
 //         }
 //     }
 
-//     fn withdrawl(&mut self, withdrawl_ammount: f64) {
+//     fn withdrawal(&mut self, withdraw_amount: f64) {
 //         if self.balance < 0.0 {
 //             println!("current balance should be greater than zero");
 //         } else {
-//             self.balance -= withdrawl_ammount;
+//             self.balance -= withdraw_amount;
 //             println!("current balance is : {}", self.balance)
 //         }
 //     }
@@ -43,7 +43,7 @@ impl Account {
         }
     }
 
-    fn withdrawl(&mut self, amount: f64) {
+    fn withdrawal(&mut self, amount: f64) {
         if amount <= 0.0 {
             println!("Withdrawal amount should be greater than zero.");
         } else if amount > self.balance {
@@ -84,7 +84,7 @@ fn main() {
     println!("Final Balance: ₹{:.2}", status.get_balance());
 
     println!("\n== Withdrawal ==");
-    status.withdrawl(operational);
+    status.withdrawal(operational);
     println!("Final Balance: ₹{:.2}", status.get_balance());
 
     println!("\n== Final Account Summary ==");

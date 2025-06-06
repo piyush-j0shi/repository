@@ -1,57 +1,13 @@
 repos:
-  # Rust-specific hooks
   - repo: https://github.com/doublify/pre-commit-rust
     rev: v1.0
     hooks:
-      # 1. Format code with rustfmt
       - id: fmt
         name: Rust Format
-        description: Format Rust code with rustfmt
-        entry: rustfmt
-        language: system
-        files: \.rs$
-        args: [--edition=2021]
-      
-      # 2. Lint with clippy
       - id: clippy
         name: Rust Clippy
-        description: Lint Rust code with clippy
-        entry: cargo clippy
-        language: system
-        files: \.rs$
-        pass_filenames: false
         args: [--all-targets, --all-features, --, -D, warnings]
-      
-      # 3. Check compilation
-      - id: check
-        name: Rust Check
-        description: Check Rust compilation
-        entry: cargo check
-        language: system
-        files: \.rs$
-        pass_filenames: false
-        args: [--all-targets, --all-features]
 
-  # 4. Security audit
-  - repo: https://github.com/rust-secure-code/cargo-audit
-    rev: v0.18.3
-    hooks:
-      - id: cargo-audit
-        name: Cargo Audit
-        description: Security audit for Rust dependencies
-        entry: cargo audit
-        language: system
-        pass_filenames: false
-
-  # 5. Spell checking
-  - repo: https://github.com/crate-ci/typos
-    rev: v1.16.23
-    hooks:
-      - id: typos
-        name: Typos
-        description: Check for typos in code and comments
-
-  # Essential file checks
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
@@ -59,19 +15,21 @@ repos:
       - id: end-of-file-fixer
       - id: check-toml
 
-# Configuration
-default_stages: [commit]
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.16.23
+    hooks:
+      - id: typos
+        args: [--write-changes]
+
+default_stages: [pre-commit]
 fail_fast: false
 
-# CI configuration
 ci:
   autofix_commit_msg: |
     [pre-commit.ci] auto fixes from pre-commit hooks
-
   autofix_prs: true
   autoupdate_branch: ''
   autoupdate_commit_msg: '[pre-commit.ci] pre-commit autoupdate'
   autoupdate_schedule: weekly
   skip: []
   submodules: false
-

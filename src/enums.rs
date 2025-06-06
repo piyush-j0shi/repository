@@ -25,7 +25,7 @@ enum Message {
 
 // impl Message {
 //     fn call(&self) {
-//         println!("message recieved  : {:?}", self);
+//         println!("message received  : {:?}", self);
 //     }
 // }
 
