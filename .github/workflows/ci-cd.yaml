@@ -78,7 +78,7 @@ jobs:
 
       - run: |
           rm -rf ./docs
-          cp -r ./target/doc/repository ./docs
+          cp -r ./target/doc/dumb ./docs
 
 
       - name: Deploy to GitHub Pages
