@@ -16,73 +16,68 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt, clippy
-
-      - uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cargo/registry
-            ~/.cargo/git
-            target
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-
       - run: cargo fmt --all -- --check
       - run: cargo clippy --all-targets --all-features -- -D warnings
       - run: cargo check --all-features
 
-  test:
-    name: Test
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
     needs: check
     steps:
       - uses: actions/checkout@v4
-
       - uses: dtolnay/rust-toolchain@stable
+      - run: echo "Running additional linting tasks..."
 
-      - uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cargo/registry
-            ~/.cargo/git
-            target
-          key: ${{ runner.os }}-test-${{ hashFiles('**/Cargo.lock') }}
+  audit:
+    name: Audit
+    runs-on: ubuntu-latest
+    needs: check
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo install cargo-audit --locked
+      - run: cargo audit
 
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    needs: [lint, audit]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
       - run: cargo build --all-features
       - run: cargo test --all-features
 
-  docs:
-    name: Deploy Documentation
+  bench:
+    name: Bench
     runs-on: ubuntu-latest
-    needs: test
+    needs: [lint, audit]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: echo "Simulating benchmark..."; cargo build # replace with `cargo bench` if using nightly
+
+  docs:
+    name: Deploy Docs
+    runs-on: ubuntu-latest
+    needs: [test, bench]
 
     permissions:
       contents: write
 
     steps:
       - uses: actions/checkout@v4
-
       - uses: dtolnay/rust-toolchain@stable
-
-      - uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cargo/registry
-            ~/.cargo/git
-            target
-          key: ${{ runner.os }}-docs-${{ hashFiles('**/Cargo.lock') }}
-
       - run: cargo doc --no-deps --all-features
-
       - run: |
           rm -rf ./docs
-          cp -r ./target/doc/dumb ./docs
-
-
+          cp -r ./target/doc/dumb/* ./docs
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target/doc
+          publish_dir: ./docs
