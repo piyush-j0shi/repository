@@ -78,7 +78,8 @@ jobs:
 
       - run: |
           rm -rf ./docs
-          cp -r ./target/doc/<crate-name> ./docs
+          cp -r ./target/doc/repository ./docs
+
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
