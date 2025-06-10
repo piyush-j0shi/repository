@@ -1,1 +1,1 @@
-## cargo check > try/except/pass
+cargo check > try/except/pass
