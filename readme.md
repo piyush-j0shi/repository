@@ -3,6 +3,7 @@
 `cargo check > try / expect / finally`
 
 🦀 just pushing my daily rust learnings here.
+
 i break things, experiment, curse the borrow checker, and eventually make it work.
 
 this is just a rusty code backup.
