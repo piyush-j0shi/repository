@@ -7,6 +7,7 @@
 i break things, experiment, curse the borrow checker, and eventually make it work.
 
 this is just a rusty code backup.
+because when the compiler screams, i scream back.
 
 a repo where i throw:
 
