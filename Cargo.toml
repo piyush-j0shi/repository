@@ -5,7 +5,3 @@ edition = "2024"
 
 [dependencies]
 rand = "0.8.5"
-
-[[bin]]
-name = "vectors_list"
-path = "src/vectors_list.rs"
