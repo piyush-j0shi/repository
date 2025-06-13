@@ -1,3 +1,3 @@
-var srcIndex = new Map(JSON.parse('[["collection_string",["",[],["collection_string.rs"]]],["dumb",["",[],["main.rs"]]]]'));
+var srcIndex = new Map(JSON.parse('[["dumb",["",[],["main.rs"]]]]'));
 createSrcSidebar();
-//{"start":36,"fragment_lengths":[54,29]}
+//{"start":36,"fragment_lengths":[28]}

@@ -1,2 +1,2 @@
-window.ALL_CRATES = ["collection_string","dumb"];
-//{"start":21,"fragment_lengths":[19,7]}
+window.ALL_CRATES = ["dumb"];
+//{"start":21,"fragment_lengths":[6]}

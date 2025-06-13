@@ -1,1 +1,0 @@
-searchState.loadedDescShard("collection_string", 0, "")
