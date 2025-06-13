@@ -5,7 +5,3 @@ edition = "2024"
 
 [dependencies]
 rand = "0.8.5"
-
-[[bin]]
-name = "collection_string"
-path = "src/collection_string.rs"
