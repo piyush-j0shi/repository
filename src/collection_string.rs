@@ -43,4 +43,22 @@ fn main() {
 
     s4.push('l');
     println!("updated string is : {s4}");
+
+    // concatenation is string
+
+    let s5 = String::from("hello ");
+    let s6 = String::from("world");
+    let s7 = s5 + &s6;
+    println!("concatenated string is : {s7}");
+
+    let s8 = String::from("tic");
+    let s9 = String::from("tac");
+    let s10 = String::from("toe");
+
+    // let s11 = s8 + "-" + &s9 + "-" + &s10;
+    // println!("the new concatenated string is : {s11}");
+
+    // another way to concatenate is
+    let s12 = format!("{s8}-{s9}-{s10}");
+    println!("other way of concatenation is : {s12}");
 }
