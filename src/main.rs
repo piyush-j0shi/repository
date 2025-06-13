@@ -8,7 +8,9 @@ fn main() {
 
     // we can also write
     // let s = "initial content".to_string();
+
     // OR
+
     // let s = String::from("initial content");
 
     // strings are UTF-8 encoded, so we can include any properly encoded data in them
@@ -23,4 +25,22 @@ fn main() {
     // let hello = String::from("Olá");
     // let hello = String::from("Здравствуйте");
     // let hello = String::from("Hola");
+
+    // appending and updating a string
+    let mut s1 = String::from("foo");
+    println!("old string is : {s1}");
+
+    s1.push_str("bar");
+    println!("updated string is : {s1}");
+
+    let mut s2 = String::from("foo");
+    let s3 = "bar";
+    s2.push_str(s3);
+    println!("the new string is : {s2}");
+
+    let mut s4 = String::from("lo");
+    println!("old string is : {s4}");
+
+    s4.push('l');
+    println!("updated string is : {s4}");
 }
