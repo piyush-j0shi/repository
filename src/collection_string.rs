@@ -61,4 +61,17 @@ fn main() {
     // another way to concatenate is
     let s12 = format!("{s8}-{s9}-{s10}");
     println!("other way of concatenation is : {s12}");
+
+    // slicing in string
+    let hello = "नमस्ते";
+
+    for c in hello.chars() {
+        println!("{c}");
+        // if we need letter we need to use `unicode-segmentation` and  `grapheme clusters` if
+        // string is other than `utf-8` encoding
+    }
+
+    for b in hello.bytes() {
+        println!("{b}");
+    }
 }
