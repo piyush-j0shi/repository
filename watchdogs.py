@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     event_handler = CustomHandler()
     observer = Observer()
-    observer.schedule(event_handler, path=path, recursive=False)
+    observer.schedule(event_handler, path=path, recursive=True)
     observer.start()
 
     try:

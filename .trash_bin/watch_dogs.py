@@ -30,6 +30,37 @@ def backup_file(path):
         shutil.copy2(path, backup_path)
         log("BACKUP", f"{base} → {backup_path}")
 
+# let's add a function for 7 days
+# def cleanup_old_backups(days=7):
+#     if not os.path.exists(BACKUP_DIR):
+#         return
+
+#     now = datetime.datetime.now()
+#     cutoff = now - datetime.timedelta(days=days)
+
+#     for file in os.listdir(BACKUP_DIR):
+#         path = os.path.join(BACKUP_DIR, file)
+#         if os.path.isfile(path):
+#             mtime = datetime.datetime.fromtimestamp(os.path.getmtime(path))
+#             if mtime < cutoff:
+#                 os.remove(path)
+#                 log("CLEANUP", f"Removed old backup: {file}")
+
+def cleanup_old_backups(minutes=3):
+    if not os.path.exists(BACKUP_DIR):
+        return
+
+    now = datetime.datetime.now()
+    cutoff = now - datetime.timedelta(minutes=minutes)
+
+    for file in os.listdir(BACKUP_DIR):
+        path = os.path.join(BACKUP_DIR, file)
+        if os.path.isfile(path):
+            mtime = datetime.datetime.fromtimestamp(os.path.getmtime(path))
+            if mtime < cutoff:
+                os.remove(path)
+                log("CLEANUP", f"Removed old backup: {file}")
+
 def restore_file(path):
     base = os.path.basename(path)
     backup_path = os.path.join(BACKUP_DIR, base)
@@ -65,4 +96,5 @@ class CustomHandler(FileSystemEventHandler):
     def on_moved(self, event):
         if not event.is_directory and self.should_handle(event.dest_path):
             log("MOVED", f"from {event.src_path} to {event.dest_path}")
+
 
