@@ -1,0 +1,74 @@
+[WATCHING] 2025-06-13 13:32:37 — Monitoring folder: /home/null/dumb
+[CREATED] 2025-06-13 13:32:48 — ./test3.txt
+[BACKUP] 2025-06-13 13:32:48 — test3.txt → .trash_bin/test3.txt
+[MODIFIED] 2025-06-13 13:32:48 — ./test3.txt
+[BACKUP] 2025-06-13 13:32:48 — test3.txt → .trash_bin/test3.txt
+[DELETED] 2025-06-13 13:34:00 — ./test.txt
+[RECOVERED] 2025-06-13 13:34:00 — ./test.txt restored from backup
+[DELETED] 2025-06-13 13:34:00 — ./test1.txt
+[RECOVERED] 2025-06-13 13:34:00 — ./test1.txt restored from backup
+[DELETED] 2025-06-13 13:34:00 — ./test3.txt
+[RECOVERED] 2025-06-13 13:34:00 — ./test3.txt restored from backup
+[CREATED] 2025-06-13 13:34:00 — ./test.txt
+[BACKUP] 2025-06-13 13:34:00 — test.txt → .trash_bin/test.txt
+[MODIFIED] 2025-06-13 13:34:00 — ./test.txt
+[BACKUP] 2025-06-13 13:34:00 — test.txt → .trash_bin/test.txt
+[CREATED] 2025-06-13 13:34:00 — ./test1.txt
+[BACKUP] 2025-06-13 13:34:00 — test1.txt → .trash_bin/test1.txt
+[MODIFIED] 2025-06-13 13:34:00 — ./test1.txt
+[BACKUP] 2025-06-13 13:34:00 — test1.txt → .trash_bin/test1.txt
+[CREATED] 2025-06-13 13:34:00 — ./test3.txt
+[BACKUP] 2025-06-13 13:34:00 — test3.txt → .trash_bin/test3.txt
+[MODIFIED] 2025-06-13 13:34:00 — ./test3.txt
+[BACKUP] 2025-06-13 13:34:00 — test3.txt → .trash_bin/test3.txt
+[DELETED] 2025-06-13 13:34:38 — ./test.txt
+[RECOVERED] 2025-06-13 13:34:38 — ./test.txt restored from backup
+[CREATED] 2025-06-13 13:34:38 — ./test.txt
+[BACKUP] 2025-06-13 13:34:38 — test.txt → .trash_bin/test.txt
+[MODIFIED] 2025-06-13 13:34:38 — ./test.txt
+[BACKUP] 2025-06-13 13:34:38 — test.txt → .trash_bin/test.txt
+[DELETED] 2025-06-13 13:35:22 — ./test.txt
+[RECOVERED] 2025-06-13 13:35:22 — ./test.txt restored from backup
+[CREATED] 2025-06-13 13:35:22 — ./test.txt
+[BACKUP] 2025-06-13 13:35:22 — test.txt → .trash_bin/test.txt
+[MODIFIED] 2025-06-13 13:35:22 — ./test.txt
+[BACKUP] 2025-06-13 13:35:22 — test.txt → .trash_bin/test.txt
+[WATCHING] 2025-06-14 03:44:45 — Monitoring folder: /home/null/dumb
+[CREATED] 2025-06-14 03:44:55 — ./test.txt
+[BACKUP] 2025-06-14 03:44:55 — test.txt → .trash_bin/test.txt
+[MODIFIED] 2025-06-14 03:44:55 — ./test.txt
+[BACKUP] 2025-06-14 03:44:55 — test.txt → .trash_bin/test.txt
+[DELETED] 2025-06-14 03:45:07 — ./test1.txt
+[RECOVERED] 2025-06-14 03:45:07 — ./test1.txt restored from backup
+[CREATED] 2025-06-14 03:45:07 — ./test1.txt
+[BACKUP] 2025-06-14 03:45:07 — test1.txt → .trash_bin/test1.txt
+[MODIFIED] 2025-06-14 03:45:07 — ./test1.txt
+[BACKUP] 2025-06-14 03:45:07 — test1.txt → .trash_bin/test1.txt
+[DELETED] 2025-06-14 03:46:01 — ./test1.txt
+[RECOVERED] 2025-06-14 03:46:01 — ./test1.txt restored from backup
+[CREATED] 2025-06-14 03:46:01 — ./test1.txt
+[BACKUP] 2025-06-14 03:46:01 — test1.txt → .trash_bin/test1.txt
+[MODIFIED] 2025-06-14 03:46:01 — ./test1.txt
+[BACKUP] 2025-06-14 03:46:01 — test1.txt → .trash_bin/test1.txt
+[CREATED] 2025-06-14 03:47:30 — ./test1.txt
+[BACKUP] 2025-06-14 03:47:30 — test1.txt → .trash_bin/test1.txt
+[MODIFIED] 2025-06-14 03:47:30 — ./test1.txt
+[BACKUP] 2025-06-14 03:47:30 — test1.txt → .trash_bin/test1.txt
+[MODIFIED] 2025-06-14 03:47:30 — ./test1.txt
+[BACKUP] 2025-06-14 03:47:30 — test1.txt → .trash_bin/test1.txt
+[MODIFIED] 2025-06-14 03:47:30 — ./test1.txt
+[BACKUP] 2025-06-14 03:47:30 — test1.txt → .trash_bin/test1.txt
+[MOVED] 2025-06-14 03:48:19 — from ./test1.txt to ./test5.txt
+[MODIFIED] 2025-06-14 03:53:58 — ./test5.txt
+[BACKUP] 2025-06-14 03:53:58 — test5.txt → .trash_bin/test5.txt
+[MODIFIED] 2025-06-14 03:53:58 — ./test5.txt
+[BACKUP] 2025-06-14 03:53:58 — test5.txt → .trash_bin/test5.txt
+[DELETED] 2025-06-14 03:53:58 — ./test5.txt
+[RECOVERED] 2025-06-14 03:53:58 — ./test5.txt restored from backup
+[CREATED] 2025-06-14 03:53:58 — ./test5.txt
+[BACKUP] 2025-06-14 03:53:58 — test5.txt → .trash_bin/test5.txt
+[MODIFIED] 2025-06-14 03:53:58 — ./test5.txt
+[BACKUP] 2025-06-14 03:53:58 — test5.txt → .trash_bin/test5.txt
+[MODIFIED] 2025-06-14 03:53:58 — ./test5.txt
+[BACKUP] 2025-06-14 03:53:58 — test5.txt → .trash_bin/test5.txt
+[EXIT] 2025-06-14 03:58:32 — Stopping observer...
