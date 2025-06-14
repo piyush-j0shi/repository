@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     except KeyboardInterrupt:
         log("EXIT", "Stopping observer...")
+        
         observer.stop()
-
     observer.join()
 

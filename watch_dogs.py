@@ -66,3 +66,4 @@ class CustomHandler(FileSystemEventHandler):
         if not event.is_directory and self.should_handle(event.dest_path):
             log("MOVED", f"from {event.src_path} to {event.dest_path}")
 
+

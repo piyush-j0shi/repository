@@ -72,3 +72,21 @@
 [MODIFIED] 2025-06-14 03:53:58 — ./test5.txt
 [BACKUP] 2025-06-14 03:53:58 — test5.txt → .trash_bin/test5.txt
 [EXIT] 2025-06-14 03:58:32 — Stopping observer...
+[WATCHING] 2025-06-14 05:51:40 — Monitoring folder: /home/null/dumb
+[CREATED] 2025-06-14 05:51:53 — ./test.txt
+[BACKUP] 2025-06-14 05:51:53 — test.txt → .trash_bin/test.txt
+[MODIFIED] 2025-06-14 05:51:53 — ./test.txt
+[BACKUP] 2025-06-14 05:51:53 — test.txt → .trash_bin/test.txt
+[RECOVERED] 2025-06-14 05:52:12 — test.txt restored from backup
+[MODIFIED] 2025-06-14 05:52:12 — ./test.txt
+[BACKUP] 2025-06-14 05:52:12 — test.txt → .trash_bin/test.txt
+[MODIFIED] 2025-06-14 05:52:12 — ./test.txt
+[BACKUP] 2025-06-14 05:52:12 — test.txt → .trash_bin/test.txt
+[CREATED] 2025-06-14 05:52:45 — ./watchdog_api.py
+[BACKUP] 2025-06-14 05:52:45 — watchdog_api.py → .trash_bin/watchdog_api.py
+[MODIFIED] 2025-06-14 05:52:45 — ./watchdog_api.py
+[BACKUP] 2025-06-14 05:52:45 — watchdog_api.py → .trash_bin/watchdog_api.py
+[MODIFIED] 2025-06-14 05:52:45 — ./watchdog_api.py
+[BACKUP] 2025-06-14 05:52:45 — watchdog_api.py → .trash_bin/watchdog_api.py
+[MODIFIED] 2025-06-14 05:52:45 — ./watchdog_api.py
+[BACKUP] 2025-06-14 05:52:45 — watchdog_api.py → .trash_bin/watchdog_api.py
