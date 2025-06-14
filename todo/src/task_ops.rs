@@ -34,7 +34,7 @@ pub fn view_tasks(tasks: &Vec<Task>) {
 
     for (i, task) in tasks.iter().enumerate() {
         println!(
-            "Task {} | Desc: {} | Status: {:?} | Priority: {:?}",
+            "Task {} | Description: {} | Status: {:?} | Priority: {:?}",
             i + 1,
             task.description,
             task.status,
