@@ -47,7 +47,7 @@ fn add_task(tasks: &mut Vec<Task>) {
         description: desc,
         status: Status::Pending,
         priority: match prrt.as_str() {
-            "Low" => Priority::High,
+            "Low" => Priority::Low,
             "Medium" => Priority::Medium,
             "High" => Priority::High,
             _ => {
