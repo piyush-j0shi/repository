@@ -1,0 +1,1 @@
+/home/null/repository/contacts/target/debug/contacts: /home/null/repository/contacts/src/actions.rs /home/null/repository/contacts/src/main.rs /home/null/repository/contacts/src/model.rs /home/null/repository/contacts/src/utils.rs
