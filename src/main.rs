@@ -1,3 +1,3 @@
 fn main() {
-    println!("todo.rs");
+    println!("hello world");
 }
