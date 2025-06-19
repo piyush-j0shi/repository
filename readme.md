@@ -1,4 +1,3 @@
-## readme.md
 
 `cargo check > try / expect / finally`
 
