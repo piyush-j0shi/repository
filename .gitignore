@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # python bytecode
 __pycache__/
 *.pyc
@@ -18,3 +19,7 @@ env/
 *.swn
 *~
 
+=======
+/target
+.venv/
+>>>>>>> 1afc0868b59e303577151e61c9c0afd978350f95
