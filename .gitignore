@@ -1,0 +1,20 @@
+# python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# virtual environments
+.venv/
+venv/
+env/
+
+# environment variables
+.env
+*.env
+
+# vim specific
+*.swp
+*.swo
+*.swn
+*~
+
