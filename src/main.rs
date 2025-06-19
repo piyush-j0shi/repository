@@ -1,3 +1,3 @@
 fn main() {
-    println!("contact.rs");
+    println!("hashmap.rs");
 }
