@@ -1,3 +1,3 @@
 fn main() {
-    println!("hashmap.rs");
+    println!("combined.rs");
 }
