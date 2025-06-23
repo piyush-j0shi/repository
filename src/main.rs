@@ -14,5 +14,9 @@ fn main() {
     // if this function succeeds the value `greeting_file_name` will be an instance of `result OK`,
     // otherwise it will be an instance of `result ERR`
 
-    let _greeting_file_result = File::open("hello.txt");
+    let greeting_file_result = File::open("hello.txt");
+    let _greeting_file = match greeting_file_result {
+        Ok(file) => file,
+        Err(error) => panic!("Problem opening the file: {error:?}"),
+    };
 }
