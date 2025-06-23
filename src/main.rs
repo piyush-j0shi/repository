@@ -1,3 +1,3 @@
 fn main() {
-    println!("combined.rs");
+    println!("panic.rs");
 }
