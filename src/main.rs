@@ -47,4 +47,12 @@ fn main() {
     //        panic!("Problem opening the file: {error:?}");
     //   }
     // });
+
+    // other way instead of result -> `unwrap or expect`
+
+    // let greeting_file = File::open("hello.txt").unwrap();
+    // let greeting_file = File::open("hello.txt")
+    //    .expect("hello.txt should be included in this project");
+
+    // Propagation errors
 }
