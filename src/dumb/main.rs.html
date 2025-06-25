@@ -56,8 +56,8 @@
 <a href=#56 id=56 data-nosnippet>56</a>    // };
 <a href=#57 id=57 data-nosnippet>57</a>
 <a href=#58 id=58 data-nosnippet>58</a>    </span><span class="kw">let </span>greeting_file_result = File::open(<span class="string">"hello.txt"</span>);
-<a href=#59 id=59 data-nosnippet>59</a>
-<a href=#60 id=60 data-nosnippet>60</a>    <span class="kw">let </span>_greeting_file = <span class="kw">match </span>greeting_file_result {
+<a href=#59 id=59 data-nosnippet>59</a>    <span class="comment">//
+<a href=#60 id=60 data-nosnippet>60</a>    </span><span class="kw">let </span>_greeting_file = <span class="kw">match </span>greeting_file_result {
 <a href=#61 id=61 data-nosnippet>61</a>        <span class="prelude-val">Ok</span>(file) =&gt; file,
 <a href=#62 id=62 data-nosnippet>62</a>        <span class="prelude-val">Err</span>(error) =&gt; <span class="kw">match </span>error.kind() {
 <a href=#63 id=63 data-nosnippet>63</a>            ErrorKind::NotFound =&gt; <span class="kw">match </span>File::create(<span class="string">"hello.txt"</span>) {
