@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":["main","read_username_from_file"]};
+window.SIDEBAR_ITEMS = {"fn":["main"]};
