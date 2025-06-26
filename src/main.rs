@@ -1,3 +1,20 @@
+#[allow(dead_code)]
+#[derive(Debug)]
+// <T> in rust
+struct Point<T> {
+    x: T,
+    y: T,
+}
+
+#[allow(dead_code)]
+#[derive(Debug)]
+// here we are using multiple generics so two generics <T> and <U> we can define as much as we want
+// now the good thing is T and U can be same or different types
+struct Point2<T, U> {
+    x: T,
+    y: U,
+}
+
 //fn largest_i32(list: &[i32]) -> &i32 {
 //    let mut largest = &list[0];
 //
@@ -29,7 +46,7 @@
 // camelcase type
 
 // if you want to remove deduplication from largest we can do it like
-// fn largest<T>(list : *[T]) -> &T{}
+// fn largest<T>(list : &[T]) -> &T{}
 
 // we need to use `PartialOrd` because we want to compare the items in the list and rust does not
 // know the types so othervise it will throw an error that I can not compare char with Int so to
@@ -55,4 +72,21 @@ fn main() {
     let char_list = vec!['y', 'm', 'a', 'q'];
     let result = largest(&char_list);
     println!("The largest char is {result}");
+
+    let ineteger = Point { x: 10, y: 10 };
+    let float = Point { x: 10.0, y: 10.0 };
+    println!("Integer Point: {:?}", ineteger);
+    println!("Float Point: {:?}", float);
+
+    // let wont_work = Point { x: 5, y: 4.0 };
+    // This above line will throw an error bcz rust does not allow this both values should be same
+    // type <T>
+
+    let both_integer = Point2 { x: 5, y: 10 };
+    let both_float = Point2 { x: 1.0, y: 4.0 };
+    let integer_and_float = Point2 { x: 5, y: 4.0 };
+
+    println!("Both Integer Point: {:?}", both_integer);
+    println!("Both Float Point: {:?}", both_float);
+    println!("Integer and Float Point: {:?}", integer_and_float);
 }
