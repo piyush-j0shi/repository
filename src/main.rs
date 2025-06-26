@@ -31,12 +31,28 @@
 // if you want to remove deduplication from largest we can do it like
 // fn largest<T>(list : *[T]) -> &T{}
 
+// we need to use `PartialOrd` because we want to compare the items in the list and rust does not
+// know the types so othervise it will throw an error that I can not compare char with Int so to
+// survive from that we use PartialOrd
+
+fn largest<T: PartialOrd>(list: &[T]) -> &T {
+    let mut largest = &list[0];
+
+    for item in list {
+        if item > largest {
+            largest = item;
+        }
+    }
+
+    largest
+}
+
 fn main() {
-    //    let number_list = vec![34, 50, 25, 100, 65];
-    //    let result = largest_i32(&number_list);
-    //    println!("The largest number is {result}");
-    //
-    //    let char_list = vec!['y', 'm', 'a', 'q'];
-    //    let result = largest_char(&char_list);
-    //    println!("The largest char is {result}");
+    let number_list = vec![34, 50, 25, 100, 65];
+    let result = largest(&number_list);
+    println!("The largest number is {result}");
+
+    let char_list = vec!['y', 'm', 'a', 'q'];
+    let result = largest(&char_list);
+    println!("The largest char is {result}");
 }
