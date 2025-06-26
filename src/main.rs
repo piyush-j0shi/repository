@@ -6,6 +6,13 @@ struct Point<T> {
     y: T,
 }
 
+// implementinf `impl` also
+impl<T> Point<T> {
+    fn x(&self) -> &T {
+        &self.x
+    }
+}
+
 #[allow(dead_code)]
 #[derive(Debug)]
 // here we are using multiple generics so two generics <T> and <U> we can define as much as we want
@@ -14,6 +21,12 @@ struct Point2<T, U> {
     x: T,
     y: U,
 }
+
+// as we have previously seen enums
+// enum Result<T, E> {
+//    Ok(T),
+//    Err(E),
+//}
 
 //fn largest_i32(list: &[i32]) -> &i32 {
 //    let mut largest = &list[0];
@@ -89,4 +102,7 @@ fn main() {
     println!("Both Integer Point: {:?}", both_integer);
     println!("Both Float Point: {:?}", both_float);
     println!("Integer and Float Point: {:?}", integer_and_float);
+
+    let p = Point { x: 5, y: 5 };
+    println!("p.x = {}", p.x());
 }
