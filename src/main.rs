@@ -13,6 +13,13 @@ impl<T> Point<T> {
     }
 }
 
+// we can also use VIP treatment or I should say Specialization of same data type
+impl Point<f32> {
+    fn distance_from_origin(&self) -> f32 {
+        (self.x.powi(2) + self.y.powi(2)).sqrt()
+    }
+}
+
 #[allow(dead_code)]
 #[derive(Debug)]
 // here we are using multiple generics so two generics <T> and <U> we can define as much as we want
@@ -20,6 +27,23 @@ impl<T> Point<T> {
 struct Point2<T, U> {
     x: T,
     y: U,
+}
+
+#[allow(dead_code)]
+#[derive(Debug)]
+struct Point3<T1, U1> {
+    x: T1,
+    y: U1,
+}
+
+// methods for multiple types as well
+impl<T1, U1> Point3<T1, U1> {
+    fn mixup<T2, U2>(self, other: Point3<T2, U2>) -> Point3<T1, U2> {
+        Point3 {
+            x: self.x,
+            y: other.y,
+        }
+    }
 }
 
 // as we have previously seen enums
@@ -105,4 +129,14 @@ fn main() {
 
     let p = Point { x: 5, y: 5 };
     println!("p.x = {}", p.x());
+
+    let p_float = Point { x: 3.0, y: 4.0 };
+    println!("Distance from origin: {:?}", p_float.distance_from_origin());
+
+    let p2 = Point3 { x: 5, y: 10.4 };
+    let p3 = Point3 { x: "Hello", y: 'c' };
+
+    let p4 = p2.mixup(p3);
+
+    println!("p3.x = {}, p3.y = {}", p4.x, p4.y);
 }
