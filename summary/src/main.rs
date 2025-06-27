@@ -1,4 +1,4 @@
-use aggregator::{SocialPost, Summary};
+use summary::{SocialPost, Summary};
 
 fn main() {
     let post = SocialPost {
