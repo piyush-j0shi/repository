@@ -3,7 +3,7 @@
 // i do not know any of these that means these both comes from standard library so I can not use
 // this and also I do not have these in scope so I can use whatever I have in Scope.
 
-use summary::{SocialPost, Summary};
+use summary::{SocialPost, Summary, notify};
 // use summary::{NewsArticle, Summary};
 
 fn main() {
@@ -38,4 +38,7 @@ fn main() {
         repost: false,
     };
     println!("1 new social post: {}", post.summarize());
+
+    // using trait as parameters and trait bound
+    //    notify(&post);
 }

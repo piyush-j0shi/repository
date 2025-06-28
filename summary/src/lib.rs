@@ -68,3 +68,17 @@ impl Summary for SocialPost {
         format!("@{}", self.username)
     }
 }
+
+// Traits as parameters
+
+// pub fn notify(item: &impl Summary) {
+//    println!("Breaking news! {}", item.summarize());
+// }
+
+// now the thing here is this is a concrete type we don't want that so what do we do, now we will
+// generics types.
+
+// Trait Bound Syntax
+pub fn notify<T: Summary>(item: &T) {
+    println!("Breaking news! {}", item.summarize());
+}
