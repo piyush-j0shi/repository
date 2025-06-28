@@ -40,5 +40,5 @@ fn main() {
     println!("1 new social post: {}", post.summarize());
 
     // using trait as parameters and trait bound
-    //    notify(&post);
+    notify(&post);
 }
