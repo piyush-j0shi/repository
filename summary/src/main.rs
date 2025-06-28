@@ -3,7 +3,7 @@
 // i do not know any of these that means these both comes from standard library so I can not use
 // this and also I do not have these in scope so I can use whatever I have in Scope.
 
-use summary::{SocialPost, Summary, notify};
+use summary::{SocialPost, Summary, notify, returns_summarizable};
 // use summary::{NewsArticle, Summary};
 
 fn main() {
@@ -41,4 +41,8 @@ fn main() {
 
     // using trait as parameters and trait bound
     notify(&post);
+
+    // using return types that implement traits
+    let post2 = returns_summarizable();
+    println!("1 new social post: {}", post2.summarize());
 }
