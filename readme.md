@@ -96,3 +96,58 @@ this repo isn’t finished. it never will be.
 because in rust, the moment you think you’re done,
 <br>
 the borrow checker reminds you: *you’re not.*
+
+---
+
+## things rust has taught me
+
+- ownership is real and it hurts
+- everything is a reference to a reference to a reference
+- if your code compiles, you're already better than yesterday
+- the borrow checker isn’t a bug. it’s a therapist
+- sometimes `unwrap()` is self-care
+- `match` is both a control flow and a coping mechanism
+- lifetimes aren’t real, but the trauma is
+- `String` and `&str` are different. always. forever. painfully.
+- cloning everything feels wrong, but silence from the compiler feels right
+- `Result<T, E>` is a relationship — you need to handle it with care
+- `async` in rust? no. i still need to heal from lifetimes first
+- `impl<T: Trait>` looks harmless until it multiplies
+- sometimes you don’t fix the bug — you just write around it
+
+---
+
+## things clippy has said to me in my darkest moments
+
+- “you could simplify this with `.map()`”
+  i could also go outside. but here we are.
+
+- “this `match` can be written more cleanly”
+  so can my life, clippy.
+
+- “warning: this function has too many arguments”
+  warning: this function has too many emotions.
+
+- “consider removing this unnecessary clone”
+  it’s not unnecessary. it’s emotional support.
+
+- “variable name `x` is not descriptive”
+  it stands for *existential crisis*, clippy.
+
+- “this method returns `Result`, but the error is never handled”
+  neither are my feelings, but here we are.
+
+- “expression could be simplified with a `let` chain”
+  *i* could be simplified with therapy.
+
+- “you might want to split this function into smaller parts”
+  me too, clippy. me too.
+
+- “you can remove this `mut`”
+  but i’m already too deep in the mutable lifestyle.
+
+- “this block is empty”
+  so is my soul, clippy.
+
+- “you’ve defined this struct, but it’s never used”
+  story of my career.
