@@ -120,45 +120,34 @@ the borrow checker reminds you: *you’re not.*
 ## things clippy has said to me in my darkest moments
 
 - “you could simplify this with `.map()`”<br>
-  i could also go outside. but here we are.
-<br>
+  i could also go outside. but here we are.<br>
 
 - “this `match` can be written more cleanly”<br>
-  so can my life, clippy.
-<br>
+  so can my life, clippy.<br>
 
 - “warning: this function has too many arguments”<br>
-  warning: this function has too many emotions.
-<br>
+  warning: this function has too many emotions.<br>
 
 - “consider removing this unnecessary clone”<br>
-  it’s not unnecessary. it’s emotional support.
-<br>
+  it’s not unnecessary. it’s emotional support.<br>
 
 - “variable name `x` is not descriptive”<br>
-  it stands for *existential crisis*, clippy.
-<br>
+  it stands for *existential crisis*, clippy.<br>
 
 - “this method returns `Result`, but the error is never handled”<br>
-  neither are my feelings, but here we are.
-<br>
+  neither are my feelings, but here we are.<br>
 
 - “expression could be simplified with a `let` chain”<br>
-  *i* could be simplified with therapy.
-<br>
+  *i* could be simplified with therapy.<br>
 
 - “you might want to split this function into smaller parts”<br>
-  me too, clippy. me too.
-<br>
+  me too, clippy. me too.<br>
 
 - “you can remove this `mut`”<br>
-  but i’m already too deep in the mutable lifestyle.
-<br>
+  but i’m already too deep in the mutable lifestyle.<br>
 
 - “this block is empty”<br>
-  so is my soul, clippy.
-<br>
+  so is my soul, clippy.<br>
 
 - “you’ve defined this struct, but it’s never used”<br>
-  story of my career.
-<br>
+  story of my career.<br>
