@@ -73,4 +73,16 @@ fn main() {
     //     let result = longest(string1.as_str(), string2.as_str());
     //     println!("the longest string is : {result}")
     // }
+
+    // this is not valid because when we use lifetimes rust takes the shortest overlapping lifetime and due to
+    // this when we try to use the returned reference when one of the argument goes out of scope
+    // then it causes the error because the lifetime has ended.
+
+    // let string1 = String::from("long string is long");
+    // let result;
+    // {
+    //     let string2 = String::from("xyz");
+    //     result = longest(string1.as_str(), string2.as_str());
+    // }
+    // println!("The longest string is {result}");
 }
