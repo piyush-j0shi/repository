@@ -22,6 +22,14 @@ struct ImportantExcerpt<'a> {
     part: &'a str,
 }
 
+// Lifetime Annotations in Method Definitions
+impl<'a> ImportantExcerpt<'a> {
+    fn announce_and_return_part(&self, announcement: &str) -> &str {
+        println!("attention please : {announcement}");
+        self.part
+    }
+}
+
 fn main() {
     // here we are denoting the lifetime of r with 'a and x with 'b so just to thing the r has
     // the inner 'b block is much smaller than the outer 'a lifetime block. At compile time,
@@ -128,4 +136,11 @@ fn main() {
     // The second rule specifies that the lifetime of the one input parameter gets assigned to the output lifetime,
     // so the signature is now this:
     // fn first_word<'a>(s: &'a str) -> &'a str {
+
+    let excerpt = ImportantExcerpt {
+        part: first_sentence,
+    };
+
+    let result = excerpt.announce_and_return_part(first_sentence);
+    println!("Returned excerpt: {}", result);
 }
