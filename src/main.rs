@@ -143,4 +143,7 @@ fn main() {
 
     let result = excerpt.announce_and_return_part(first_sentence);
     println!("Returned excerpt: {}", result);
+
+    let s: &'static str = "i have static lifetime";
+    println!("static lifetime : {s}")
 }
