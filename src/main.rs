@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 // every reference in rust has a lifetime, which is the scope for which that reference is valid
 
 // fn longest(x: &str, y: &str) -> &str {
@@ -16,6 +17,10 @@
 //         y
 //     }
 // }
+#[derive(Debug)]
+struct ImportantExcerpt<'a> {
+    part: &'a str,
+}
 
 fn main() {
     // here we are denoting the lifetime of r with 'a and x with 'b so just to thing the r has
@@ -85,4 +90,13 @@ fn main() {
     //     result = longest(string1.as_str(), string2.as_str());
     // }
     // println!("The longest string is {result}");
+
+    // Lifetime annotations in struct definitions
+
+    let novel = String::from("call me someone. some years ago.....");
+    let first_sentence = novel.split('.').next().unwrap();
+    let i = ImportantExcerpt {
+        part: first_sentence,
+    };
+    println!("ImportantExcerpt is : {:?}", i);
 }
