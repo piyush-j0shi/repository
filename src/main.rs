@@ -1,4 +1,3 @@
-#[allow(dead_code)]
 // every reference in rust has a lifetime, which is the scope for which that reference is valid
 
 // fn longest(x: &str, y: &str) -> &str {
@@ -17,6 +16,8 @@
 //         y
 //     }
 // }
+use std::fmt::Display;
+
 #[derive(Debug)]
 struct ImportantExcerpt<'a> {
     part: &'a str,
@@ -145,5 +146,15 @@ fn main() {
     println!("Returned excerpt: {}", result);
 
     let s: &'static str = "i have static lifetime";
-    println!("static lifetime : {s}")
+    println!("static lifetime : {s}");
+
+    // Generic Type Parameters, Trait Bounds, and Lifetimes Together
+    #[allow(unused)]
+    fn longest_with_an_announcement<'a, T>(x: &'a str, y: &'a str, ann: T) -> &'a str
+    where
+        T: Display,
+    {
+        println!("Announcement : {ann}");
+        if x.len() > y.len() { x } else { y }
+    }
 }
