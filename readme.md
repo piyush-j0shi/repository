@@ -117,7 +117,7 @@ the borrow checker reminds you: *you’re not.*
 
 ---
 
-## things clippy has said to me in my darkest moments
+## things clippy has said to me 
 
 - “you could simplify this with `.map()`”<br>
   i could also go outside. but here we are.<br>
