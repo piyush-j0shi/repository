@@ -1,29 +1,20 @@
-// 3. struct + vec
+// 4. generic struct
 #[derive(Debug)]
-struct TodoList {
-    items: Vec<String>,
+struct Container<T> {
+    value: T,
 }
 
-impl TodoList {
-    fn new() -> Self {
-        TodoList { items: Vec::new() }
+impl<T> Container<T> {
+    fn new(value: T) -> Self {
+        Container { value }
     }
 
-    fn add(&mut self, item: String) {
-        self.items.push(item);
-    }
-
-    fn get_all(&self) -> &Vec<String> {
-        &self.items
+    fn get(&self) -> &T {
+        &self.value
     }
 }
 
 fn main() {
-    let mut items = TodoList::new();
-    items.add(String::from("value"));
-    items.add(String::from("value"));
-    items.add(String::from("value"));
-
-    let all_items = items.get_all();
-    println!("all items : {:?}", all_items);
+    let new_values = Container::new(-2);
+    println!("{:?}", new_values.get());
 }
