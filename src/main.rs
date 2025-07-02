@@ -1,38 +1,29 @@
-// // 2. struct + enum
-// #[derive(Debug)]
-// enum TaskStatus {
-//     Todo,
-//     InProgress,
-//     Done,
-// }
+// 3. struct + vec
+#[derive(Debug)]
+struct TodoList {
+    items: Vec<String>,
+}
 
-// #[derive(Debug)]
-// struct Task {
-//     name: String,
-//     status: TaskStatus,
-// }
+impl TodoList {
+    fn new() -> Self {
+        TodoList { items: Vec::new() }
+    }
 
-// impl Task {
-//     fn new(name: &str) -> Self {
-//         Task {
-//             name: name.to_string(),
-//             status: TaskStatus::Todo,
-//         }
-//     }
+    fn add(&mut self, item: String) {
+        self.items.push(item);
+    }
 
-//     fn complete(&mut self) {
-//         self.status = TaskStatus::Done;
-//     }
-// }
-
-// fn main() {
-//     let mut task_1 = Task::new("username");
-//     println!("{:?}", task_1);
-
-//     let _status = task_1.complete();
-//     println!("{:?}", task_1);
-// }
+    fn get_all(&self) -> &Vec<String> {
+        &self.items
+    }
+}
 
 fn main() {
-    println!("struct + enum");
+    let mut items = TodoList::new();
+    items.add(String::from("value"));
+    items.add(String::from("value"));
+    items.add(String::from("value"));
+
+    let all_items = items.get_all();
+    println!("all items : {:?}", all_items);
 }
