@@ -1,44 +1,51 @@
-// 10. fulll combi
-// trait Processable {
-//     fn process(&self) -> String;
-// }
+#[derive(Debug)]
+enum TaskStatus {
+    Todo,
+    InProgress,
+    Completed,
+}
 
-// enum Status { Success, Error }
+#[derive(Debug)]
+struct Task {
+    name: String,
+    description: String,
+    status: TaskStatus,
+}
 
-// struct Processor<'a, T> {
-//     name: &'a str,
-//     items: Vec<T>,
-// }
+impl Task {
+    fn new(name: &str, description: &str) -> Self {
+        Task {
+            name: name.to_string(),
+            description: description.to_string(),
+            status: TaskStatus::Todo,
+        }
+    }
 
-// impl<'a, T> Processor<'a, T>
-// where
-//     T: Processable,
-// {
-//     fn new(name: &'a str) -> Self {
-//         Processor {
-//             name,
-//             items: Vec::new()
-//         }
-//     }
+    fn start(&mut self) {
+        self.status = TaskStatus::InProgress
+    }
 
-//     fn add_item(&mut self, item: T) {
-//         self.items.push(item);
-//     }
-
-//     fn process_all(&self) -> Vec<Status> {
-//         self.items.iter()
-//             .map(|item| {
-//                 let result = item.process();
-//                 if result.is_empty() {
-//                     Status::Error
-//                 } else {
-//                     Status::Success
-//                 }
-//             })
-//             .collect()
-//     }
-// }
+    fn complete(&mut self) {
+        self.status = TaskStatus::Completed
+    }
+}
 
 fn main() {
-    println!("ok");
+    let mut task = Task::new("name", "description");
+    println!(
+        "task_name : {}, task_description : {}, status : {:?}",
+        task.name, task.description, task.status
+    );
+
+    task.start();
+    println!(
+        "task_name : {}, task_description : {}, status : {:?}",
+        task.name, task.description, task.status
+    );
+
+    task.complete();
+    println!(
+        "task_name : {}, task_description : {}, status : {:?}",
+        task.name, task.description, task.status
+    );
 }
