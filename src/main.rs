@@ -12,6 +12,11 @@ struct Task {
     status: TaskStatus,
 }
 
+#[derive(Debug)]
+struct TaskList {
+    tasks: Vec<Task>,
+}
+
 impl Task {
     fn new(name: &str, description: &str) -> Self {
         Task {
@@ -27,6 +32,16 @@ impl Task {
 
     fn complete(&mut self) {
         self.status = TaskStatus::Completed
+    }
+}
+
+impl TaskList {
+    fn new() -> Self {
+        TaskList { tasks: Vec::new() }
+    }
+
+    fn add_task(&mut self, task: Task) {
+        self.tasks.push(task);
     }
 }
 
@@ -48,4 +63,8 @@ fn main() {
         "task_name : {}, task_description : {}, status : {:?}",
         task.name, task.description, task.status
     );
+
+    let mut tasklist = TaskList::new();
+    tasklist.add_task(task);
+    println!("{:#?}", tasklist);
 }
