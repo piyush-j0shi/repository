@@ -17,11 +17,12 @@ struct TaskList {
     tasks: Vec<Task>,
 }
 
-#[derive(Debug)]
+// #[derive(Debug)]
 // struct ItemsList<T> {
 //     items : T,
 // }
 
+#[derive(Debug)]
 struct ItemList<T> {
     items: Vec<T>,
 }
