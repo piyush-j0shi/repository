@@ -1,25 +1,28 @@
-// Generic + Trait
-
-// trait Printable {
-//     fn print(&self);
+// 8. vec + trait
+// trait Animal {
+//     fn make_sound(&self) -> String;
 // }
 
-// #[derive(Debug)]
-// struct Printer<T> {
-//     name : T,
+// struct Dog;
+// struct Cat;
+
+// impl Animal for Dog {
+//     fn make_sound(&self) -> String { "Woof!".to_string() }
 // }
 
-// impl<T> Printer<T>
-// where
-//     T : Printable{
-//         fn new(item : T) -> Self {
-//             Printer { name: item }
-//         }
+// impl Animal for Cat {
+//     fn make_sound(&self) -> String { "Meow!".to_string() }
+// }
 
-//         fn print_item(&self) {
-//             self.name.print()
-//         }
-//     }
+// // Collection of anything that implements Animal
+// let animals: Vec<Box<dyn Animal>> = vec![
+//     Box::new(Dog),
+//     Box::new(Cat),
+// ];
+
+// for animal in animals {
+//     println!("{}", animal.make_sound());
+// }
 
 fn main() {
     println!("ok");
