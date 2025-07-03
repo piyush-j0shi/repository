@@ -118,7 +118,7 @@ fn main() {
 
     let mut tasklist = TaskList::new();
     tasklist.add_task(task);
-    println!("{:?}", tasklist);
+    println!("{:#?}", tasklist);
 
     // let todotask = tasklist.todo_count();
     // let inprogresstask = tasklist.inprogress_count();
@@ -140,7 +140,7 @@ fn main() {
     let itemcount = itemlist.count();
     let getallitem = itemlist.get_all();
 
-    println!("items : {:?}", itemlist);
+    println!("items : {:#?}", itemlist);
     println!("items : {}", itemcount);
-    println!("items : {:?}", getallitem);
+    println!("items : {:#?}", getallitem);
 }
