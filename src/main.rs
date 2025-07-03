@@ -1,29 +1,21 @@
-// 8. vec + trait
-// trait Animal {
-//     fn make_sound(&self) -> String;
-// }
+// 9. lifetimes
 
-// struct Dog;
-// struct Cat;
+struct Book<'a> {
+    title: &'a str,
+}
 
-// impl Animal for Dog {
-//     fn make_sound(&self) -> String { "Woof!".to_string() }
-// }
+impl<'a> Book<'a> {
+    fn new(title: &'a str) -> Self {
+        Book { title }
+    }
 
-// impl Animal for Cat {
-//     fn make_sound(&self) -> String { "Meow!".to_string() }
-// }
-
-// // Collection of anything that implements Animal
-// let animals: Vec<Box<dyn Animal>> = vec![
-//     Box::new(Dog),
-//     Box::new(Cat),
-// ];
-
-// for animal in animals {
-//     println!("{}", animal.make_sound());
-// }
+    fn get_title(&self) -> &str {
+        self.title
+    }
+}
 
 fn main() {
-    println!("ok");
+    let title = "Rust Programming".to_string();
+    let book = Book::new(&title);
+    println!("{}", book.get_title());
 }
