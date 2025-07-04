@@ -33,6 +33,12 @@ struct User {
     email: String,
 }
 
+#[derive(Debug)]
+struct TaskManager<'a> {
+    name: &'a str,
+    tasks: Vec<Task>,
+}
+
 trait Describable {
     fn describe(&self) -> String;
 }
@@ -138,6 +144,19 @@ where
     }
 }
 
+impl<'a> TaskManager<'a> {
+    fn new(name: &'a str) -> Self {
+        TaskManager {
+            name,
+            tasks: Vec::new(),
+        }
+    }
+
+    fn add_task(&mut self, task: Task) {
+        self.tasks.push(task);
+    }
+}
+
 fn main() {
     let mut task = Task::new("name", "description");
     println!(
@@ -196,4 +215,10 @@ fn main() {
 
     itemlist.describe_all();
     userlist.describe_all();
+
+    let mut taskmanager = TaskManager::new("name");
+    let task1 = Task::new("name", "description");
+    taskmanager.add_task(task1);
+    println!("task manager name : {}", taskmanager.name);
+    println!("task manager : {:#?}", taskmanager);
 }
