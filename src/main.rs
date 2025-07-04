@@ -27,6 +27,16 @@ struct ItemList<T> {
     items: Vec<T>,
 }
 
+#[derive(Debug)]
+struct User {
+    name: String,
+    email: String,
+}
+
+trait Describable {
+    fn describe(&self) -> String;
+}
+
 impl Task {
     fn new(name: &str, description: &str) -> Self {
         Task {
@@ -79,7 +89,40 @@ impl TaskList {
 //     }
 // }
 
-impl<T> ItemList<T> {
+// impl<T> ItemList<T> {
+//     fn new() -> Self {
+//         ItemList { items: Vec::new() }
+//     }
+//
+//     fn add(&mut self, item: T) {
+//         self.items.push(item);
+//     }
+//
+//     fn count(&self) -> usize {
+//         self.items.len()
+//     }
+//
+//     fn get_all(&self) -> &Vec<T> {
+//         &self.items
+//     }
+// }
+
+impl Describable for Task {
+    fn describe(&self) -> String {
+        format!("{}, {}", self.name, self.description)
+    }
+}
+
+impl Describable for User {
+    fn describe(&self) -> String {
+        format!("{}, {}", self.name, self.email)
+    }
+}
+
+impl<T> ItemList<T>
+where
+    T: Describable,
+{
     fn new() -> Self {
         ItemList { items: Vec::new() }
     }
@@ -88,12 +131,10 @@ impl<T> ItemList<T> {
         self.items.push(item);
     }
 
-    fn count(&self) -> usize {
-        self.items.len()
-    }
-
-    fn get_all(&self) -> &Vec<T> {
-        &self.items
+    fn describe_all(&self) {
+        for item in &self.items {
+            println!("{}", item.describe());
+        }
     }
 }
 
@@ -131,16 +172,28 @@ fn main() {
     // let itemlist = ItemsList::new(3);
     // println!("{:?}", itemlist.items);
 
-    let mut itemlist = ItemList::new();
-    itemlist.add("item");
-    itemlist.add("item");
-    itemlist.add("item");
-    itemlist.add("item");
+    //     let mut itemlist = ItemList::new();
+    //     itemlist.add("item");
+    //     itemlist.add("item");
+    //     itemlist.add("item");
+    //     itemlist.add("item");
+    //
+    //     let itemcount = itemlist.count();
+    //     let getallitem = itemlist.get_all();
 
-    let itemcount = itemlist.count();
-    let getallitem = itemlist.get_all();
+    //     println!("items : {:#?}", itemlist);
+    //     println!("items : {}", itemcount);
+    //     println!("items : {:#?}", getallitem);
 
-    println!("items : {:#?}", itemlist);
-    println!("items : {}", itemcount);
-    println!("items : {:#?}", getallitem);
+    let mut itemlist = ItemList::<Task>::new();
+    let mut userlist = ItemList::<User>::new();
+
+    itemlist.add(Task::new("name", "description"));
+    userlist.add(User {
+        name: "name".to_string(),
+        email: "email".to_string(),
+    });
+
+    itemlist.describe_all();
+    userlist.describe_all();
 }
