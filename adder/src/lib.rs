@@ -102,20 +102,20 @@
 // }
 
 // adding custom failure messages
-pub fn greeting(name: &str) -> String {
-    format!("hello")
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn greeting_contains_name() {
-        let result = greeting("carol");
-        assert!(
-            result.contains("carol"),
-            "greeting did not contained name, value was `{result}`"
-        );
-    }
-}
+// pub fn greeting(name: &str) -> String {
+//     format!("hello")
+// }
+//
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+//
+//     #[test]
+//     fn greeting_contains_name() {
+//         let result = greeting("carol");
+//         assert!(
+//             result.contains("carol"),
+//             "greeting did not contained name, value was `{result}`"
+//         );
+//     }
+// }
