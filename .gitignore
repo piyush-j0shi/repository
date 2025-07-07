@@ -1,2 +1,3 @@
 /target
 .venv/
+adder/target/debug/deps
