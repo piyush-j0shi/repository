@@ -25,10 +25,17 @@ struct Rectangle {
     height: u32,
 }
 
+// #[allow(dead_code)]
+// impl Rectangle {
+//     fn can_hold(&self, other: &Rectangle) -> bool {
+//         self.width > other.width && self.height > other.height
+//     }
+// }
+
 #[allow(dead_code)]
 impl Rectangle {
     fn can_hold(&self, other: &Rectangle) -> bool {
-        self.width > other.width && self.height > other.height
+        self.width < other.width && self.height > other.height
     }
 }
 
@@ -49,5 +56,20 @@ mod test {
         };
 
         assert!(larger.can_hold(&smaller))
+    }
+
+    #[test]
+    fn larger_cannot_hold_smaller() {
+        let larger = Rectangle {
+            width: 1,
+            height: 1,
+        };
+
+        let smaller = Rectangle {
+            width: 2,
+            height: 2,
+        };
+
+        assert!(smaller.can_hold(&larger))
     }
 }
