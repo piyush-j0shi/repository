@@ -80,8 +80,30 @@
 
 // Using assert_eq!() and assert_ne()!
 
-pub fn add_two(a: usize) -> usize {
-    a + 2
+// pub fn add_two(a: usize) -> usize {
+//     a + 2
+// }
+
+// #[cfg(test)]
+// mod tests {
+//    use super::*;
+
+//    #[test]
+//    fn it_adds_two() {
+//        let result = add_two(2);
+//        assert_eq!(result, 4);
+//    }
+
+//    #[test]
+//    fn it_doesnot_add_two() {
+//        let result = add_two(2);
+//        assert_ne!(result, 5);
+//    }
+// }
+
+// adding custom failure messages
+pub fn greeting(name: &str) -> String {
+    format!("hello")
 }
 
 #[cfg(test)]
@@ -89,14 +111,11 @@ mod tests {
     use super::*;
 
     #[test]
-    fn it_adds_two() {
-        let result = add_two(2);
-        assert_eq!(result, 4);
-    }
-
-    #[test]
-    fn it_doesnot_add_two() {
-        let result = add_two(2);
-        assert_ne!(result, 5);
+    fn greeting_contains_name() {
+        let result = greeting("carol");
+        assert!(
+            result.contains("carol"),
+            "greeting did not contained name, value was `{result}`"
+        );
     }
 }
