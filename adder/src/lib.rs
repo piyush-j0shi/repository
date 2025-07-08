@@ -125,29 +125,51 @@
 // expected should be substring of original panic messages or whatever othervise the test cases
 // will fail with an error.
 
-pub struct Guess {
-    value: i32,
-}
+// pub struct Guess {
+//     value: i32,
+// }
+//
+// impl Guess {
+//     pub fn new(value: i32) -> Guess {
+//         if value < 1 {
+//             panic!("value must be greater than or equal to 1, got {value}");
+//         } else if value > 100 {
+//             panic!("value must be less than or equal to 100, got {value}");
+//         }
+//
+//         Guess { value }
+//     }
+// }
+//
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+//
+//     #[test]
+//     #[should_panic(expected = "less than or equal to 100")]
+//     fn greater_than_100() {
+//         Guess::new(200);
+//     }
+// }
 
-impl Guess {
-    pub fn new(value: i32) -> Guess {
-        if value < 1 {
-            panic!("value must be greater than or equal to 1, got {value}");
-        } else if value > 100 {
-            panic!("value must be less than or equal to 100, got {value}");
-        }
+// test cases in `Result<T, E>` format
 
-        Guess { value }
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    #[should_panic(expected = "less than or equal to 100")]
-    fn greater_than_100() {
-        Guess::new(200);
-    }
-}
+// fn add_two(value: i32) -> i32 {
+//     value + 2
+// }
+//
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+//
+//     #[test]
+//     fn it_works() -> Result<(), String> {
+//         let result = add_two(2);
+//
+//         if result == 4 {
+//             Ok(())
+//         } else {
+//             Err(String::from("something went wrong."))
+//         }
+//     }
+// }
