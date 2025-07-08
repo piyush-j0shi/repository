@@ -1,3 +1,3 @@
 fn main() {
-    println!("still remaining");
+    println!("howtowritetests.rs");
 }
