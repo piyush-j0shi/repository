@@ -1,3 +1,3 @@
 fn main() {
-    println!("howtowritetests.rs");
+    println!("controllinghowtestsarerun.rs");
 }
