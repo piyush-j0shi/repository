@@ -208,7 +208,11 @@
 
 // running a subset of test by name
 // 1. running a single test
-// cargo test test_function_name (ex : cargo test add_two_and_one_hundred)
+// cargo test test_function_name (ex : cargo test two_and_one_hundred)
+
+// 2. Filtering to Run Multiple Tests
+// cargo test partof test name (We can specify part of a test name, and any test whose name matches that value will be run)
+// ( ex : cargo test add )
 
 pub fn add_two(a: i32) -> i32 {
     a + 2
@@ -231,7 +235,7 @@ mod tests {
     }
 
     #[test]
-    fn add_two_and_one_hundred() {
+    fn two_and_one_hundred() {
         let value = add_two(100);
         assert_eq!(value, 102)
     }
