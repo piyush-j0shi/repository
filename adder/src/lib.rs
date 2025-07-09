@@ -218,6 +218,32 @@ pub fn add_two(a: i32) -> i32 {
     a + 2
 }
 
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+
+// #[test]
+// fn add_two_and_tw0() {
+//     let value = add_two(2);
+//     assert_eq!(value, 4)
+// }
+
+// #[test]
+// fn add_two_and_three() {
+//     let value = add_two(3);
+//     assert_eq!(value, 5)
+// }
+
+// #[test]
+// fn two_and_one_hundred() {
+//     let value = add_two(100);
+//     assert_eq!(value, 102)
+// }
+
+// }
+
+// Ignoring test cases with #[ignore]
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -228,15 +254,12 @@ mod tests {
         assert_eq!(value, 4)
     }
 
-    #[test]
-    fn add_two_and_three() {
-        let value = add_two(3);
-        assert_eq!(value, 5)
-    }
+    // test tests::expensive_test ... ignored
+    // test tests::add_two_and_tw0 ... ok
 
     #[test]
-    fn two_and_one_hundred() {
-        let value = add_two(100);
-        assert_eq!(value, 102)
+    #[ignore]
+    fn expensive_test() {
+        // code that takes an hour to run
     }
 }
