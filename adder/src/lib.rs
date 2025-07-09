@@ -173,3 +173,10 @@
 //         }
 //     }
 // }
+
+// Running tests in parllelly or consecutively
+// We set the number of test threads to 1, telling the program not to use any parallelism.
+// Running the tests using one thread will take longer than running them in parallel,
+//  but the tests won’t interfere with each other if they share state.
+
+// cargo test -- --test-threads=1
