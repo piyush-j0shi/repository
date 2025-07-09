@@ -181,12 +181,37 @@
 
 // cargo test -- --test-threads=1
 
-// printing test outputs
+// printing function outputs in test
 // cargo test -- --show-output
 
-fn prints_and_returns_10(a: i32) -> i32 {
-    println!("i got the value {a}");
-    10
+// fn prints_and_returns_10(a: i32) -> i32 {
+//     println!("i got the value {a}");
+//     10
+// }
+
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+
+//     #[test]
+//     fn this_test_will_pass() {
+//         let value = prints_and_returns_10(10);
+//         assert_eq!(value, 10)
+//     }
+
+//     #[test]
+//     fn this_test_will_fail() {
+//         let value = prints_and_returns_10(5);
+//         assert_eq!(value, 5)
+//     }
+// }
+
+// running a subset of test by name
+// 1. running a single test
+// cargo test test_function_name (ex : cargo test add_two_and_one_hundred)
+
+pub fn add_two(a: i32) -> i32 {
+    a + 2
 }
 
 #[cfg(test)]
@@ -194,14 +219,20 @@ mod tests {
     use super::*;
 
     #[test]
-    fn this_test_will_pass() {
-        let value = prints_and_returns_10(10);
-        assert_eq!(value, 10)
+    fn add_two_and_tw0() {
+        let value = add_two(2);
+        assert_eq!(value, 4)
     }
 
     #[test]
-    fn this_test_will_fail() {
-        let value = prints_and_returns_10(5);
+    fn add_two_and_three() {
+        let value = add_two(3);
         assert_eq!(value, 5)
+    }
+
+    #[test]
+    fn add_two_and_one_hundred() {
+        let value = add_two(100);
+        assert_eq!(value, 102)
     }
 }
