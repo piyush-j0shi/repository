@@ -180,3 +180,28 @@
 //  but the tests won’t interfere with each other if they share state.
 
 // cargo test -- --test-threads=1
+
+// printing test outputs
+// cargo test -- --show-output
+
+fn prints_and_returns_10(a: i32) -> i32 {
+    println!("i got the value {a}");
+    10
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn this_test_will_pass() {
+        let value = prints_and_returns_10(10);
+        assert_eq!(value, 10)
+    }
+
+    #[test]
+    fn this_test_will_fail() {
+        let value = prints_and_returns_10(5);
+        assert_eq!(value, 5)
+    }
+}
