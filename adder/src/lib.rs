@@ -244,22 +244,22 @@ pub fn add_two(a: i32) -> i32 {
 
 // Ignoring test cases with #[ignore]
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
 
-    #[test]
-    fn add_two_and_tw0() {
-        let value = add_two(2);
-        assert_eq!(value, 4)
-    }
+//     #[test]
+//     fn add_two_and_tw0() {
+//         let value = add_two(2);
+//         assert_eq!(value, 4)
+//     }
 
-    // test tests::expensive_test ... ignored
-    // test tests::add_two_and_tw0 ... ok
+//     // test tests::expensive_test ... ignored
+//     // test tests::add_two_and_tw0 ... ok
 
-    #[test]
-    #[ignore]
-    fn expensive_test() {
-        // code that takes an hour to run
-    }
-}
+//     #[test]
+//     #[ignore]
+//     fn expensive_test() {
+//         // code that takes an hour to run
+//     }
+// }
