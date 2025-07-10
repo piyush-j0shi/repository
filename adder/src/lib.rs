@@ -214,9 +214,9 @@
 // cargo test partof test name (We can specify part of a test name, and any test whose name matches that value will be run)
 // ( ex : cargo test add )
 
-pub fn add_two(a: i32) -> i32 {
-    a + 2
-}
+// pub fn add_two(a: i32) -> i32 {
+//     a + 2
+// }
 
 // #[cfg(test)]
 // mod tests {
@@ -263,3 +263,23 @@ pub fn add_two(a: i32) -> i32 {
 //         // code that takes an hour to run
 //     }
 // }
+
+// testing private functions
+pub fn add_two(a: i32) -> i32 {
+    a + 2
+}
+
+fn internal_adder(left: usize, right: usize) -> usize {
+    left + right
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn internal() {
+        let result = internal_adder(10, 10);
+        assert_eq!(result, 20)
+    }
+}
