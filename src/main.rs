@@ -1,3 +1,3 @@
 fn main() {
-    println!("controllinghowtestsarerun.rs");
+    println!("testcases.rs");
 }
