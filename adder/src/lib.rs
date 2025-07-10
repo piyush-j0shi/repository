@@ -265,21 +265,28 @@
 // }
 
 // testing private functions
-pub fn add_two(a: i32) -> i32 {
+
+// pub fn add_two(a: i32) -> i32 {
+//     a + 2
+// }
+
+// fn internal_adder(left: usize, right: usize) -> usize {
+//     left + right
+// }
+
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
+
+//     #[test]
+//     fn internal() {
+//         let result = internal_adder(10, 10);
+//         assert_eq!(result, 20)
+//     }
+// }
+
+// Integration Tests
+
+pub fn add_two(a: usize) -> usize {
     a + 2
-}
-
-fn internal_adder(left: usize, right: usize) -> usize {
-    left + right
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn internal() {
-        let result = internal_adder(10, 10);
-        assert_eq!(result, 20)
-    }
 }
