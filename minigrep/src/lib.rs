@@ -28,11 +28,14 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 }
 
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-    for line in contents.line() {
+    let mut result = Vec::new();
+
+    for line in contents.lines() {
         if line.contains(query) {
-            // do something here
+            result.push(line)
         }
     }
+    result
 }
 
 #[cfg(test)]
@@ -47,6 +50,6 @@ Rust:
 safe, fast, productive.
 pick three.";
 
-        assert_eq!(vec!["safe, fast, productive"], search(query, contents));
+        assert_eq!(vec!["safe, fast, productive."], search(query, contents));
     }
 }
