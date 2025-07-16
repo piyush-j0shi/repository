@@ -2,6 +2,7 @@ use std::env;
 use std::error::Error;
 use std::fs;
 
+// struct for holding configuration
 pub struct Config {
     pub query: String,
     pub file_path: String,
