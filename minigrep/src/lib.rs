@@ -38,6 +38,8 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     for line in results {
         println!("{line}");
     }
+
+    Ok(())
 }
 
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
