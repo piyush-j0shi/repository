@@ -78,4 +78,9 @@ fn main() {
     // let n = example_closure(5);
 
     println!("Result: {}", expensive_closure(42));
+
+    // closure can take values from environment in three ways which are
+    // 1. borrowing immutably
+    // 2. borrowing mutably
+    // 3. taking ownership
 }
