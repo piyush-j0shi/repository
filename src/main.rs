@@ -9,6 +9,10 @@ struct Inventory {
     shirts: Vec<ShirtColor>,
 }
 
+// unwrap_or_else takes a little function that gives a fallback value.
+// If there's already a value (Some), it just uses that.
+// If there's no value (None), it runs your fallback function to get one.
+
 impl Inventory {
     fn giveaway(&self, user_preference: Option<ShirtColor>) -> ShirtColor {
         user_preference.unwrap_or_else(|| self.most_stocked())
