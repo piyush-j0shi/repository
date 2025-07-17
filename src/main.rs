@@ -65,5 +65,17 @@ fn main() {
         num
     };
 
+    // fn  add_one_v1   (x: u32) -> u32 { x + 1 }
+    // let add_one_v2 = |x: u32| -> u32 { x + 1 };
+    // let add_one_v3 = |x|             { x + 1 };
+    // let add_one_v4 = |x|               x + 1  ;
+
+    // we can not use this below code because the closure we are using will not accept the other
+    // argument than string because it locks in the type of first argument.
+
+    // let example_closure = |x| x;
+    // let s = example_closure(String::from("hello"));
+    // let n = example_closure(5);
+
     println!("Result: {}", expensive_closure(42));
 }
