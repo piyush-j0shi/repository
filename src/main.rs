@@ -92,4 +92,13 @@ fn main() {
     println!("before calling closure : {list:?}");
     only_borrow();
     println!("after callling closure : {list:?}");
+
+    // 2. borrowing mutably
+
+    let mut list1 = vec![1, 2, 3];
+    println!("before defining closure : {list:?}");
+    let mut borrow_mutably = || list1.push(7);
+    println!("before calling closure : {list:?}");
+    borrow_mutably();
+    println!("after callling closure : {list:?}");
 }
