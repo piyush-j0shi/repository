@@ -83,4 +83,13 @@ fn main() {
     // 1. borrowing immutably
     // 2. borrowing mutably
     // 3. taking ownership
+
+    // 1. borrowing immutably
+
+    let list = vec![1, 2, 3];
+    println!("before defining closure : {list:?}");
+    let only_borrow = || println!("from closure : {list:?}");
+    println!("before calling closure : {list:?}");
+    only_borrow();
+    println!("after callling closure : {list:?}");
 }
