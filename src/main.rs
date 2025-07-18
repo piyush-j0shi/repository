@@ -90,6 +90,7 @@ fn main() {
     println!("before defining closure : {list:?}");
     let only_borrow = || println!("from closure : {list:?}");
     println!("before calling closure : {list:?}");
+
     only_borrow();
     println!("after callling closure : {list:?}");
 
@@ -98,7 +99,17 @@ fn main() {
     let mut list1 = vec![1, 2, 3];
     println!("before defining closure : {list:?}");
     let mut borrow_mutably = || list1.push(7);
-    println!("before calling closure : {list:?}");
+
     borrow_mutably();
     println!("after callling closure : {list:?}");
+
+    // 3. taking ownership
+    // we can take ownership by using move keyword
+
+    let list2 = vec![1, 2, 3];
+    println!("before defining closure : {list:?}");
+
+    thread::spawn(move || println!("from thread : {list2:?}"))
+        .join()
+        .unwrap();
 }
