@@ -39,6 +39,12 @@ impl Inventory {
     }
 }
 
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
 fn main() {
     let inventory = Inventory {
         shirts: vec![ShirtColor::Red, ShirtColor::Blue, ShirtColor::Blue],
@@ -137,4 +143,22 @@ fn main() {
     //     }
     // }
     // }
+
+    let mut list = [
+        Rectangle {
+            width: 10,
+            height: 20,
+        },
+        Rectangle {
+            width: 15,
+            height: 5,
+        },
+        Rectangle {
+            width: 7,
+            height: 12,
+        },
+    ];
+
+    list.sort_by_key(|r| r.width * r.height);
+    println!("{list:#?}");
 }
