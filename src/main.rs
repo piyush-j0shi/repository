@@ -144,6 +144,8 @@ fn main() {
     // }
     // }
 
+    // we need mutable variable because sort_by_key does inplace sorting.
+
     let mut list = [
         Rectangle {
             width: 10,
@@ -161,4 +163,34 @@ fn main() {
 
     list.sort_by_key(|r| r.width * r.height);
     println!("{list:#?}");
+
+    //  The reason sort_by_key is defined to take an FnMut closure is that it calls the closure multiple times:
+    //  once for each item in the slice.
+    //  The closure |r| r.width doesn’t capture, mutate, or move out anything from its environment,
+    //  so it meets the trait bound requirements.
+
+    #[allow(unused_variables)]
+    let list1 = [
+        Rectangle {
+            width: 10,
+            height: 20,
+        },
+        Rectangle {
+            width: 15,
+            height: 5,
+        },
+        Rectangle {
+            width: 7,
+            height: 12,
+        },
+    ];
+
+    //  let mut sort_operations = vec![];
+    //  let value = String::from("claosure called");
+
+    //  list1.sort_by_key(|r| {
+    //      sort_operations.push(value);
+    //      r.width * r.height
+    //  });
+    //  println!("{list1:#?}");
 }
