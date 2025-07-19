@@ -169,8 +169,7 @@ fn main() {
     //  The closure |r| r.width doesn’t capture, mutate, or move out anything from its environment,
     //  so it meets the trait bound requirements.
 
-    #[allow(unused_variables)]
-    let list1 = [
+    let mut list1 = [
         Rectangle {
             width: 10,
             height: 20,
@@ -193,4 +192,11 @@ fn main() {
     //      r.width * r.height
     //  });
     //  println!("{list1:#?}");
+
+    let mut num_sort_operations = 0;
+    list1.sort_by_key(|r| {
+        num_sort_operations += 1;
+        r.width
+    });
+    println!("{list1:#?}, sorted in {num_sort_operations} operations");
 }
