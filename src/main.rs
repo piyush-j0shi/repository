@@ -5,5 +5,10 @@
 // consumes the iterators to use it up.
 
 fn main() {
-    println!("closure.rs");
+    let v1 = vec![1, 2, 3, 4, 5];
+    let v1_iter = v1.iter();
+
+    for val in v1_iter {
+        println!("got : {val}");
+    }
 }
