@@ -11,4 +11,8 @@ fn main() {
     for val in v1_iter {
         println!("got : {val}");
     }
+
+    let v2: Vec<i32> = vec![1, 2, 3];
+    let v3: Vec<_> = v2.iter().map(|x| x + 1).collect();
+    println!("{:?}", v3);
 }
