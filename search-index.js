@@ -1,4 +1,4 @@
-var searchIndex = new Map(JSON.parse('[["dumb",{"t":"H","n":["main"],"q":[[0,"dumb"]],"i":"`","f":"{{}b}","D":"`","p":[[1,"unit"]],"r":[],"b":[],"c":"OjAAAAAAAAA=","e":"OjAAAAEAAAAAAAEAEAAAAAAAAQA=","P":[]}]]'));
+var searchIndex = new Map(JSON.parse('[["dumb",{"t":"FKNNNNNMNNNN","n":["LimitTracker","Messenger","borrow","borrow_mut","from","into","new","send","set_value","try_from","try_into","type_id"],"q":[[0,"dumb"],[12,"core::result"],[13,"core::any"]],"i":"``h0000j1111","f":"``{b{{b{c}}}{}}{{{b{d}}}{{b{dc}}}{}}{cc{}}{{}c{}}{{{b{c}}f}{{h{c}}}j}{{{b{j}}{b{l}}}n}{{{b{d{h{c}}}}f}nj}{c{{A`{e}}}{}{}}{{}{{A`{c}}}{}}{bAb}","D":"d","p":[[1,"reference",null,null,1],[0,"mut"],[1,"usize"],[5,"LimitTracker",0],[10,"Messenger",0],[1,"str"],[1,"unit"],[6,"Result",12,null,1],[5,"TypeId",13]],"r":[],"b":[],"c":"OjAAAAAAAAA=","e":"OzAAAAEAAAoAAgAAAAQABwAFAA==","P":[[2,"T"],[5,"U"],[6,"T"],[7,""],[8,"T"],[9,"U,T"],[10,"U"],[11,""]]}]]'));
 if (typeof exports !== 'undefined') exports.searchIndex = searchIndex;
 else if (window.initSearch) window.initSearch(searchIndex);
-//{"start":39,"fragment_lengths":[168]}
+//{"start":39,"fragment_lengths":[680]}
