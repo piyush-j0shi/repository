@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piyush Joshi</title>
+  <meta name="description" content="ML Engineer building agents, pipelines, and fine-tuned models.">
+  <meta property="og:title" content="Piyush Joshi">
+  <meta property="og:description" content="ML Engineer building agents, pipelines, and fine-tuned models.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Piyush Joshi">
+  <meta name="twitter:description" content="ML Engineer building agents, pipelines, and fine-tuned models.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <button class="toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+    <span class="toggle-icon" id="toggle-icon">○</span>
+    <span id="toggle-label">dark</span>
+  </button>
+
+  <header>
+    <h1>Piyush Joshi</h1>
+    <p class="tagline">ML Engineer. I care more about whether something actually works than whether it looks impressive on paper.</p>
+  </header>
+
+  <div class="content">
+
+    <p class="prose">I build ML systems for a living — agents, pipelines, fine-tuned models, whatever the problem needs. Been doing this professionally since mid-2024, and figuring things out on my own long before that. I like understanding how things actually work under the hood, which is probably why I also write Rust. Not because I have to — just because it teaches you things Python never will. Most people building with AI right now are stacking abstractions on top of abstractions without knowing what's underneath. I'd rather know.</p>
+
+    <p class="prose">Outside of that — manga, anime, and books on psychology. I think understanding how people think is just as useful as understanding how machines do.</p>
+
+    <p class="prose muted">Right now: working on something crazy in AI/ML, a lot to figure out still. Also picking up Rust properly — writing code and trying to make it work.</p>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Datamonk</span>
+        <span class="entry-meta">Mar 2025 – Present</span>
+      </div>
+      <div class="entry-subtitle">Machine Learning Engineer</div>
+      <p class="prose">I built the multi-agent framework here from scratch — reusable across products, with an orchestrator that picks execution plans based on what the user actually asks for. Agents talk to each other, delegate subtasks, cross-check outputs. There's a human-in-the-loop step so nothing runs without approval if it matters. The other thing I built here is an agent that takes a PDF, turns it into JSON, then autonomously fills out multi-page ERP forms — logs in, navigates pages, verifies every action, self-corrects when something's wrong, stores the result. No human involved. Backend is FastAPI, Docker, CI/CD on GitHub Actions.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">AnavCloud Software Solutions</span>
+        <span class="entry-meta">Oct 2024 – Mar 2025</span>
+      </div>
+      <div class="entry-subtitle">Machine Learning Engineer</div>
+      <p class="prose">Built a multimodal RAG pipeline using CLIP — text and images retrieved from the same embedding space, which opens up retrieval in ways a text-only system can't. Flask backend on Azure, ChromaDB and Azure Vector Store for vector search, live web search layered on top via LangChain and LlamaIndex for when the indexed knowledge runs out. Users could upload their own files and query against them directly. Conversation history persisted across sessions through LangGraph.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Clavrit Digital Solutions</span>
+        <span class="entry-meta">Jun – Sep 2024</span>
+      </div>
+      <div class="entry-subtitle">ML Intern</div>
+      <p class="prose">Fine-tuned YOLO for number plate and helmet detection on real video feeds, then built the OCR pipeline that extracts and normalizes plate text downstream. Used a Siamese Network to filter frames before they hit the detector — better input quality, fewer false positives. Did a lot of the unglamorous work too: data collection, cleaning, annotation, augmentation. That's most of the job, and it matters more than people admit.</p>
+    </div>
+
+    <div class="entry project">
+      <div class="entry-header">
+        <span class="entry-title">Self-Learning Text-to-SQL Engine</span>
+        <span class="entry-meta">personal project</span>
+      </div>
+      <div class="entry-subtitle">Python · LangChain · LangGraph · SQL</div>
+      <p class="prose">You talk to it in plain English across a conversation — it handles follow-ups, ambiguous phrasing, references to what was said three messages ago. Under the hood it's a four-stage pipeline: intent recognition, contextual rephrasing, table selection, SQL generation. Each stage is its own component so you can swap one out without touching the rest. What makes it different is that it doesn't just generate SQL — it runs the query, checks if the result actually answers what you asked, then responds. And when it gets something wrong — bad table name, wrong column, schema mismatch — it writes the error to long-term memory. It won't make the same mistake twice. It gets better by failing.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="prose">I reply to emails.</p>
+    <p class="prose">
+      <a href="mailto:piyush.limph@gmail.com">piyush.limph@gmail.com</a> &nbsp;·&nbsp;
+      <a href="https://github.com/piyush-j0shi" target="_blank" rel="noopener">GitHub</a> &nbsp;·&nbsp;
+      <a href="https://linkedin.com/in/piyush-joshi" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+    <p class="edu">B.Tech · Arya College of Engineering & IT · 2024 · CGPA 8.9</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
