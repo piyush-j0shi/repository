@@ -10,6 +10,18 @@
   --btn-border: #d8d4ce;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1917;
+    --text: #e8e4de;
+    --muted: #7a7470;
+    --subtle: #a09890;
+    --border: #2e2b28;
+    --btn-bg: #211f1d;
+    --btn-border: #302d2a;
+  }
+}
+
 [data-theme="dark"] {
   --bg: #1a1917;
   --text: #e8e4de;
@@ -44,7 +56,7 @@ body {
   font-weight: 300;
   line-height: 1.8;
   padding: 64px 24px 96px;
-  max-width: 640px;
+  max-width: 1080px;
   margin: 0 auto;
   transition: background 0.3s ease, color 0.3s ease;
   animation: fadein 0.35s ease both;
@@ -145,6 +157,37 @@ h1 {
 }
 
 .entry .prose { margin-top: 10px; }
+
+.entry-section {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--subtle);
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.entry-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.entry-list li {
+  font-size: 0.88rem;
+  color: var(--subtle);
+  line-height: 1.75;
+  padding-left: 14px;
+  position: relative;
+}
+
+.entry-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+}
 
 .entry {
   border-radius: 4px;
