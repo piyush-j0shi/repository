@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piyush Joshi</title>
+  <title>Piyush Joshi — ML Engineer</title>
   <meta name="description" content="ML Engineer building agents, pipelines, and fine-tuned models.">
   <meta property="og:title" content="Piyush Joshi">
   <meta property="og:description" content="ML Engineer building agents, pipelines, and fine-tuned models.">
@@ -18,21 +18,45 @@
 </head>
 <body>
 
+  <div class="progress-bar" id="progress-bar"></div>
+
+
+  <!-- Command Palette -->
+  <div class="cmd-backdrop" id="cmd-backdrop"></div>
+  <div class="cmd-palette" id="cmd-palette" role="dialog" aria-label="Command palette">
+    <input class="cmd-input" id="cmd-input" type="text" placeholder="Search..." autocomplete="off" spellcheck="false">
+    <ul class="cmd-list" id="cmd-list"></ul>
+  </div>
+
+  <!-- Section Nav -->
+  <nav class="section-nav" id="section-nav">
+    <div class="nav-dot" data-target="datamonk" data-label="Datamonk"></div>
+    <div class="nav-dot" data-target="anavcloud" data-label="AnavCloud"></div>
+    <div class="nav-dot" data-target="clavrit" data-label="Clavrit"></div>
+    <div class="nav-dot" data-target="text-to-sql" data-label="Text-to-SQL"></div>
+    <div class="nav-dot" data-target="skills" data-label="Skills"></div>
+  </nav>
+
   <button class="toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
     <span class="toggle-icon" id="toggle-icon">○</span>
     <span id="toggle-label">dark</span>
   </button>
 
+  <button class="back-to-top" id="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
+
   <header>
-    <h1>Piyush Joshi</h1>
+    <h1><span id="typewriter"></span><span class="cursor">|</span></h1>
     <p class="tagline">ML Engineer.</p>
   </header>
 
   <div class="content">
 
-    <div class="entry">
+    <div class="entry" id="datamonk">
       <div class="entry-header">
-        <span class="entry-title">Datamonk</span>
+        <div class="entry-title-wrap">
+          <span class="entry-title">Datamonk</span>
+          <a class="anchor-link" href="#datamonk">#</a>
+        </div>
         <span class="entry-meta">Mar 2025 – Present</span>
       </div>
       <div class="entry-subtitle">Machine Learning Engineer</div>
@@ -52,9 +76,12 @@
       </ul>
     </div>
 
-    <div class="entry">
+    <div class="entry" id="anavcloud">
       <div class="entry-header">
-        <span class="entry-title">AnavCloud Software Solutions</span>
+        <div class="entry-title-wrap">
+          <span class="entry-title">AnavCloud Software Solutions</span>
+          <a class="anchor-link" href="#anavcloud">#</a>
+        </div>
         <span class="entry-meta">Oct 2024 – Mar 2025</span>
       </div>
       <div class="entry-subtitle">Machine Learning Engineer</div>
@@ -66,9 +93,12 @@
       </ul>
     </div>
 
-    <div class="entry">
+    <div class="entry" id="clavrit">
       <div class="entry-header">
-        <span class="entry-title">Clavrit Digital Solutions</span>
+        <div class="entry-title-wrap">
+          <span class="entry-title">Clavrit Digital Solutions</span>
+          <a class="anchor-link" href="#clavrit">#</a>
+        </div>
         <span class="entry-meta">Jun – Sep 2024</span>
       </div>
       <div class="entry-subtitle">ML Intern</div>
@@ -80,10 +110,13 @@
       </ul>
     </div>
 
-    <div class="entry project">
+    <div class="entry project" id="text-to-sql">
       <div class="entry-header">
-        <span class="entry-title">Modular Context-Aware Text-to-SQL Engine</span>
-        <span class="entry-meta">personal project</span>
+        <div class="entry-title-wrap">
+          <span class="entry-title">Modular Context-Aware Text-to-SQL Engine</span>
+          <a class="anchor-link" href="#text-to-sql">#</a>
+        </div>
+        <span class="entry-meta">project</span>
       </div>
       <div class="entry-subtitle">Python · LangGraph · LangChain · SQL</div>
       <ul class="entry-list">
@@ -95,17 +128,62 @@
       </ul>
     </div>
 
+    <div class="entry skills-entry" id="skills">
+      <div class="entry-header">
+        <span class="entry-title">Skills</span>
+      </div>
+      <div class="skills-filter">
+        <button class="filter-btn active" data-filter="all">all</button>
+        <button class="filter-btn" data-filter="ai">ai / ml</button>
+        <button class="filter-btn" data-filter="backend">backend</button>
+        <button class="filter-btn" data-filter="cloud">cloud & db</button>
+      </div>
+      <div class="skills-tags">
+        <span class="skill-tag" data-cat="ai">LangGraph</span>
+        <span class="skill-tag" data-cat="ai">LangChain</span>
+        <span class="skill-tag" data-cat="ai">LlamaIndex</span>
+        <span class="skill-tag" data-cat="ai">Transformers</span>
+        <span class="skill-tag" data-cat="ai">PyTorch</span>
+        <span class="skill-tag" data-cat="ai">TensorFlow</span>
+        <span class="skill-tag" data-cat="ai">Scikit-learn</span>
+        <span class="skill-tag" data-cat="ai">OpenCV</span>
+        <span class="skill-tag" data-cat="ai">NumPy</span>
+        <span class="skill-tag" data-cat="ai">Pandas</span>
+        <span class="skill-tag" data-cat="ai">Hugging Face</span>
+        <span class="skill-tag" data-cat="ai">YOLO</span>
+        <span class="skill-tag" data-cat="ai">RAG</span>
+        <span class="skill-tag" data-cat="ai">Multi-Agent Systems</span>
+        <span class="skill-tag" data-cat="ai">LLM Orchestration</span>
+        <span class="skill-tag" data-cat="ai">NLP</span>
+        <span class="skill-tag" data-cat="backend">Python</span>
+        <span class="skill-tag" data-cat="backend">FastAPI</span>
+        <span class="skill-tag" data-cat="backend">Flask</span>
+        <span class="skill-tag" data-cat="backend">Rust</span>
+        <span class="skill-tag" data-cat="backend">Docker</span>
+        <span class="skill-tag" data-cat="backend">Git</span>
+        <span class="skill-tag" data-cat="backend">REST APIs</span>
+        <span class="skill-tag" data-cat="backend">CI/CD</span>
+        <span class="skill-tag" data-cat="cloud">ChromaDB</span>
+        <span class="skill-tag" data-cat="cloud">Vector Databases</span>
+        <span class="skill-tag" data-cat="cloud">Azure</span>
+        <span class="skill-tag" data-cat="cloud">SQL</span>
+      </div>
+    </div>
+
   </div>
 
   <footer>
-    <p class="prose">I reply to emails.</p>
     <p class="prose">
-      <a href="mailto:piyush.limph@gmail.com">piyush.limph@gmail.com</a> &nbsp;·&nbsp;
-      <a href="https://github.com/piyush-j0shi" target="_blank" rel="noopener">GitHub</a> &nbsp;·&nbsp;
-      <a href="https://linkedin.com/in/piyush-joshi" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="email-copy" id="email-display" onclick="copyEmail()">piyush.limph@gmail.com</span>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/piyush-j0shi" target="_blank" rel="noopener">GitHub</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.linkedin.com/in/piyush-joshi-18a65b277" target="_blank" rel="noopener">LinkedIn</a>
     </p>
-    <p class="edu">B.Tech · Arya College of Engineering & IT · 2024 · CGPA 8.9</p>
+    <p class="edu">B.Tech · Arya College of Engineering & IT · 2024</p>
   </footer>
+
+  <div class="skill-tooltip" id="skill-tooltip"></div>
 
   <script src="script.js"></script>
 
